@@ -13,9 +13,7 @@
     <script src="https://bicx--dev.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
     <script>
         $Lightning.use("c:helloworld", function() {
-            $Lightning.createComponent("c:lwcVFDemo", {
-                    objectName: "Contact"
-                },
+            $Lightning.createComponent("c:lwcVFDemo", {},
                 "lightning",
                 function(cmp) {
                     console.log("LWC component was created");
