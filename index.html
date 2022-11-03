@@ -10,10 +10,10 @@
   <body>
 	<h1>Test</h1>
     <div id="lightning"></div>
-    <script src="https://bicx--dev.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
+    <script src="https://bicx--dev.sandbox.my.site.com/marcusTest/lightning/lightning.out.js"></script>
     <script>
-        $Lightning.use("c:helloWorld", function() {
-            $Lightning.createComponent("c:lwcVFDemo", {},
+        $Lightning.use("c:LightningOutTest", function() {
+            $Lightning.createComponent("c:helloWorld", {},
                 "lightning",
                 function(cmp) {
                     console.log("LWC component was created");
@@ -21,7 +21,7 @@
                 }
             );
         },
-        'https://bicx--dev.sandbox.my.salesforce.com/'
+        'https://bicx--dev.sandbox.my.site.com/marcusTest'
         );
     </script>
   </body>
