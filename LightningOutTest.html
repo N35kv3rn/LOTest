@@ -1,25 +1,24 @@
-<div id="lightning"></div>
-<script src="https://bicx--compoc.sandbox.my.site.com/lightning/lightning.out.js"></script>
-<script>
-    const appName = 'c:LightningOut';
-    const componentName = 'c:helloWorld';
-    const lightningEndPoint = 'https://bicx--compoc.sandbox.my.site.com';
-    // Target element er dom element componenten skal henges på
-    const targetElement = 'lightning';
-    const componentAttributes = {};
+<script src="https://bicx--compoc.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
+    <script>
+        const appName = 'c:LightningOut';
+        const componentName = 'c:helloWorld';
+        const lightningEndPointURI = 'https://bicx--compoc.sandbox.lightning.force.com';
+        // Target element er dom element componenten skal henges på
+        const targetElement = 'lightning';
+        const componentAttributes = {};
 
-    $Lightning.use(
-        appName,
-        function() {
-        $Lightning.createComponent(
-            componentName,
-            componentAttributes,
-            targetElement,
-            function(cmp) {
-                console.log("LWC component was created");
-            }
+        $Lightning.use(
+            appName,
+            function() {
+            $Lightning.createComponent(
+                componentName,
+                componentAttributes,
+                targetElement,
+                function(cmp) {
+                    console.log("LWC component was created");
+                }
+            );
+        },
+        lightningEndPointURI,
         );
-    },
-    lightningEndPoint
-    );
-</script>
+    </script>
