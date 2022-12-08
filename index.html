@@ -22,7 +22,8 @@
         // Target element er dom element componenten skal henges på
         const targetElement = 'lightning';
         const setning = document.getElementById("testSetning");
-        const componentAttributes = {navn: 'yeabruh', p: setning.value};
+        let comp = document.querySelector("c-hello-world");
+        const componentAttributes = {navn: 'yeabruh', p: comp};
         const authToken ='';
 
         $Lightning.use(
