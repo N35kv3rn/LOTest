@@ -11,9 +11,13 @@
     <div data-lightning-out="true"></div>
     <p name="ptagg" id="testSetning">Test</p>
     <button onclick={consoleLogger}>github knapp</button>
+    <button>force rerender</button>
 	<h1>Test</h1>
     
     <div id="lightning"></div>
+    <script>
+      let knapp = document.getElementById(id);
+    </script>
     <script src="https://bicx--compoc.sandbox.my.site.com/comtest/lightning/lightning.out.js"></script>
     <script>
         const appName = 'c:LightningOut';
@@ -22,8 +26,6 @@
         // Target element er dom element componenten skal henges på
         const targetElement = 'lightning';
         const setning = document.getElementById("testSetning");
-        let comp = document.querySelector("c-hello-world");
-        comp.consoleLogger();
         const componentAttributes = {navn: 'yeabruh', p: comp};
         const authToken ='';
 
