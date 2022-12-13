@@ -11,7 +11,7 @@
     <div data-lightning-out="true"></div>
     <p name="ptagg" id="testSetning">Test</p>
     <button onclick="gitClick()">github knapp</button>
-    <button>force rerender</button>
+    <button onclick="helloworld()">run lightning use</button>
 	<h1>Test</h1>
     
   <div id="lightning"></div>
@@ -33,7 +33,8 @@
       const componentAttributes = {navn: 'yeabruh', varToUpdate: varToUpdate};
       const authToken ='';
 
-      $Lightning.use(
+      function helloworld() {
+        $Lightning.use(
           appName,
           function() {
           $Lightning.createComponent(
@@ -44,10 +45,12 @@
                   console.log("LWC component was created");
               }
           );
-      },
-      lightningEndPointURI,
-      authToken
-      );
+        },
+        lightningEndPointURI,
+        authToken
+        );
+      }
+      
   </script>
 
 
