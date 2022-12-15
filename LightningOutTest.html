@@ -1,24 +1,35 @@
-<script src="https://bicx--compoc.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
-    <script>
-        const appName = 'c:LightningOut';
-        const componentName = 'c:helloWorld';
-        const lightningEndPointURI = 'https://bicx--compoc.sandbox.lightning.force.com';
-        // Target element er dom element componenten skal henges på
-        const targetElement = 'lightning';
-        const componentAttributes = {};
+<script src="https://bicx--compoc.sandbox.my.site.com/comtest/lightning/lightning.out.js"></script>
+  <script>
+      function setNewId(){
+          let value = document.getElementById('productidinput').value;
+          lwc.productId = value;
+          lwc.externalPost(value);
+      }
 
-        $Lightning.use(
-            appName,
-            function() {
-            $Lightning.createComponent(
-                componentName,
-                componentAttributes,
-                targetElement,
-                function(cmp) {
-                    console.log("LWC component was created");
-                }
-            );
-        },
-        lightningEndPointURI,
+      const appName = 'c:LightningOut';
+      const componentName = 'c:helloWorld';
+      const lightningEndPointURI = 'https://bicx--compoc.sandbox.my.site.com/comtest';
+      // Target element er dom element componenten skal henges på
+      const targetElement = 'lightning';
+      const componentAttributes = {};
+      const authToken ='';
+
+      $Lightning.use(
+        appName,
+        function() {
+        $Lightning.createComponent(
+            componentName,
+            componentAttributes,
+            targetElement,
+            function(cmp) {
+                lwc = cmp.elements[0];
+                console.log('cmp.elements: ' + cmp.elements[0]);
+                console.log("LWC component was created");
+            }
         );
-    </script>
+      },
+      lightningEndPointURI,
+      authToken
+      );
+      
+  </script>
