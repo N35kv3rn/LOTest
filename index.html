@@ -8,20 +8,19 @@
     <title>Lightning out test</title>
   </head>
   <body>
-    <div data-lightning-out="true"></div>
-    <p name="ptagg" id="testSetning">Test</p>
-    <button onclick="gitClick()">github knapp</button>
-    <button onclick="helloworld()">run lightning use</button>
-	<h1>Test</h1>
+    <h1>Test</h1>
+    <label for="productidinput">Product Id</label>
+    <input id="productidinput" type="text">
+    <button onclick="setNewId()">Add Product</button>
     
-  <div id="lightning"></div>
+    <div id="lightning"></div>
   <script src="https://bicx--compoc.sandbox.my.site.com/comtest/lightning/lightning.out.js"></script>
   <script>
-      var varToUpdate = 0;
-      function gitClick() {
-        console.log('klikk registrert i git');
-        varToUpdate++;
-        console.log('GITHUB: varToUpdate = ' + varToUpdate);
+
+      function setNewId(){
+          let value = document.getElementById('productidinput').value;
+          lwc.productId = value;
+          lwc.postFromGithub(value);
       }
 
       const appName = 'c:LightningOut';
@@ -29,28 +28,25 @@
       const lightningEndPointURI = 'https://bicx--compoc.sandbox.my.site.com/comtest';
       // Target element er dom element componenten skal henges på
       const targetElement = 'lightning';
-      const setning = document.getElementById("testSetning");
-      const componentAttributes = {navn: 'yeabruh', varToUpdate: varToUpdate};
+      const componentAttributes = {};
       const authToken ='';
 
-      function helloworld() {
-        console.log("kjør");
-        $Lightning.use(
-          appName,
-          function() {
-          $Lightning.createComponent(
-              componentName,
-              componentAttributes,
-              targetElement,
-              function(cmp) {
-                  console.log("LWC component was created");
-              }
-          );
-        },
-        lightningEndPointURI,
-        authToken
+      $Lightning.use(
+        appName,
+        function() {
+        $Lightning.createComponent(
+            componentName,
+            componentAttributes,
+            targetElement,
+            function(cmp) {
+                lwc = cmp.elements[0];
+                console.log("LWC component was created");
+            }
         );
-      }
+      },
+      lightningEndPointURI,
+      authToken
+      );
       
   </script>
 
