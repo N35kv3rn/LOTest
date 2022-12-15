@@ -20,7 +20,7 @@
       function setNewId(){
           let value = document.getElementById('productidinput').value;
           lwc.productId = value;
-          lwc.postFromGithub(value);
+          lwc.externalPost(value);
       }
 
       const appName = 'c:LightningOut';
