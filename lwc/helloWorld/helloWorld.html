@@ -1,0 +1,19 @@
+<template>
+    <div class="container">
+        <h1 class="heading1">PROGRAMS</h1>
+        <template if:true={programList} for:each={programList} for:item="program">
+            <p class="text" key={program.cartItemId}>{program.name}</p>
+        </template>
+        <h1 class="heading2">COURSES</h1>
+        <template if:true={courseList} for:each={courseList} for:item="course">
+            <p class="text" key={course.cartItemId}>{course.name}</p>
+        </template>
+        <div class="buttons">
+            <button class="button" onclick={clickHandler}>Bachelor i Eiendomsmegling</button>
+            <button class="button" onclick={postOekad}>Bachelor i økonomi og administrasjon</button>
+            <button class="button" onclick={postEntreprenoer}>Bachelor i entreprenørskap</button>
+            <button class="button" onclick={postMakro}>Anvendt makroøkonomi</button>
+            <button class="button" onclick={postArbeidsrett}>Arbeidsrett 1</button>
+        </div>
+    </div>
+</template>
